@@ -29,6 +29,7 @@ class CuisinePreferencesController < ApplicationController
         cuisine_preference = CuisinePreference.find_by(id: params[:id])
     end
 
+    private
     def cuisine_preference_params
         params.require(:cuisine_preference).permit(:user_id, :cuisine_id)
     end
