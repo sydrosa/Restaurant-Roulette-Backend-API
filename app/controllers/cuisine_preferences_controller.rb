@@ -8,7 +8,17 @@ class CuisinePreferencesController < ApplicationController
 
     def index
         cuisine_preferences = CuisinePreference.all
+        render json: cuisine_preferences
     end
+
+    def show
+        cuisine_preference = CuisinePreference.find_by(id: params[:id])
+        render json: cuisine_preference.to_json(:include => {
+            :user => {:only => [:name, :email, :zipcode]},
+            :cuisine => {:only => [:kind]}
+        }, :except => [:created_at, :updated_at])
+    end
+
     
     def create
         cuisine_preference = CuisinePreference.create(cuisine_preference_params)
@@ -16,6 +26,7 @@ class CuisinePreferencesController < ApplicationController
     end
 
     def destroy
+        cuisine_preference = CuisinePreference.find_by(id: params[:id])
     end
 
     def cuisine_preference_params
