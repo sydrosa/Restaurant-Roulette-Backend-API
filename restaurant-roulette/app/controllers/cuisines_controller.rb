@@ -1,4 +1,5 @@
 class CuisinesController < ApplicationController
+    skip_before_action :authorized
     def index
         cuisines = Cuisine.all
         render json: cuisines, except: [:updated_at, :created_at]
