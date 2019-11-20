@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+preferences = ["Mexican", "Italian", "Indian", "Dominican", "American", "Vegetarian", "Vegan", "Chinese", "BBQ", "Sushi", "Japanese", "Pizza", "Mediterranean", "Soul Food", "Vietnamese", "Thai"]
+
+
+preferences.each do 
+    |cuisine| Cuisine.create(kind: cuisine)
+end
+
+    
+
+# 16.times do {
+#     |i| Cuisine.create(kind: preferences[i])
+# }
