@@ -1,4 +1,5 @@
 class CuisinePreferencesController < ApplicationController
+    skip_before_action :authorized
     def new
         cuisine_preference = CuisinePreference.new(cuisine_preference_params)
         render json: cuisine.to_json(:include => {
@@ -29,6 +30,7 @@ class CuisinePreferencesController < ApplicationController
         cuisine_preference = CuisinePreference.find_by(id: params[:id])
     end
 
+    private
     def cuisine_preference_params
         params.require(:cuisine_preference).permit(:user_id, :cuisine_id)
     end

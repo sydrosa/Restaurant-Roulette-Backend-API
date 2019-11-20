@@ -1,5 +1,4 @@
 class MatchesController < ApplicationController
-    before_action :authenticate_user
 
     def create
         match = Match.create(match_params)
@@ -22,6 +21,7 @@ class MatchesController < ApplicationController
         matches = Match.all
     end
 
+    private
     def match_params
         params.require(:match).permit(:user_id, :restaurant_id)
     end

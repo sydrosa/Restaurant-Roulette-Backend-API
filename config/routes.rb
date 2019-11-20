@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   scope '/api' do
-    # mount Knock::Engine => "/knock"
-    post 'user_token' => 'user_token#create'
     resources :users
+    post '/login', to: 'auth#create'
     resources :cuisine_preferences
   end
   resources :matches, only: [:index, :show]
