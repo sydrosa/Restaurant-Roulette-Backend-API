@@ -1,4 +1,5 @@
 class CuisinePreferencesController < ApplicationController
+    skip_before_action :authorized
     def new
         cuisine_preference = CuisinePreference.new(cuisine_preference_params)
         render json: cuisine.to_json(:include => {
