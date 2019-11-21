@@ -1,13 +1,12 @@
 class CuisinesController < ApplicationController
-    skip_before_action :authorized
     def index
         cuisines = Cuisine.all
-        render json: cuisines, except: [:updated_at, :created_at]
+        render json: cuisines
     end
 
     def show
         cuisine = Cuisine.find_by(id: params[:id])
-        render json: cuisine, except: [:updated_at, :created_at]
+        render json: cuisine
     end
 
 end
