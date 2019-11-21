@@ -12,6 +12,7 @@ preferences.each do
     |cuisine| Cuisine.create(kind: cuisine)
 end
 
+User.create(name: "Lizzo", email: "lizzo", password: "lizzo", password_confirmation: "lizzo", zipcode: 78702, radius: 5)
     
 
 # 16.times do {
