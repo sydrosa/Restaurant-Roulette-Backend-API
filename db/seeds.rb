@@ -7,13 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 preferences = ["Mexican", "Italian", "Indian", "Dominican", "American", "Vegetarian", "Vegan", "Chinese", "BBQ", "Sushi", "Japanese", "Pizza", "Mediterranean", "Soul Food", "Vietnamese", "Thai"]
 
-
+User.create(name: "Joe", email:"joe@gmail.com", password: "joe", password_confirmation: "joe", zipcode: 78702, radius: 5)
 preferences.each do 
     |cuisine| Cuisine.create(kind: cuisine)
 end
-
-    
-
-# 16.times do {
-#     |i| Cuisine.create(kind: preferences[i])
-# }
