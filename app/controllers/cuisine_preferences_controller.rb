@@ -28,6 +28,7 @@ class CuisinePreferencesController < ApplicationController
 
     def destroy
         cuisine_preference = CuisinePreference.find_by(id: params[:id])
+        cuisine_preference.destroy
     end
 
     private
