@@ -1,4 +1,5 @@
 class MatchesController < ApplicationController
+    skip_before_action :authorized
 
     def create
         match = Match.create(match_params)
