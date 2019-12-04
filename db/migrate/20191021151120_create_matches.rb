@@ -6,6 +6,7 @@ class CreateMatches < ActiveRecord::Migration[6.0]
       t.float :place_lat
       t.float :place_lng
       t.text :place_name
+      t.boolean :favorite, default: false
 
       t.timestamps
     end

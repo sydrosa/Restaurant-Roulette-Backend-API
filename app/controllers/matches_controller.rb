@@ -23,6 +23,6 @@ class MatchesController < ApplicationController
 
     private
     def match_params
-        params.require(:match).permit(:user_id, :restaurant_id)
+        params.require(:match).permit(:user_id, :place_id, :place_lat, :plate_lng, :place_name)
     end
 end

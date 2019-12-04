@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     post '/login', to: 'auth#create'
     resources :cuisine_preferences
   end
-  resources :matches, only: [:index, :show]
+  resources :matches, only: [:index, :show, :create]
   # resources :cuisine_preferences
   resources :cuisines, only: [:index, :show]
   # resources :users, only: [:create, :show, :update]

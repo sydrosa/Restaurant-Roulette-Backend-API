@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_151120) do
     t.float "place_lat"
     t.float "place_lng"
     t.text "place_name"
+    t.boolean "favorite", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
