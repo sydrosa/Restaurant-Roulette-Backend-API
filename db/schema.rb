@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2019_10_21_151120) do
   create_table "matches", force: :cascade do |t|
     t.integer "user_id"
     t.string "place_id"
-    t.decimal "place_lat"
-    t.decimal "place_lng"
+    t.float "place_lat"
+    t.float "place_lng"
     t.text "place_name"
     t.boolean "favorite", default: false
     t.datetime "created_at", precision: 6, null: false
